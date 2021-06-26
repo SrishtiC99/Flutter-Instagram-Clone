@@ -17,7 +17,7 @@ class _EmailConfirmationScreenState extends State<EmailConfirmationScreen> {
   TextEditingController _confirmationCodeController = TextEditingController();
   void _navigateToSignUpWithUserNameScreen(){
     Navigator.push(context, MaterialPageRoute(builder:  (context) =>
-        SignUpWithUserNameScreen()));
+        SignUpWithUserNameScreen(email: email,)));
   }
 
   @override

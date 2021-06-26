@@ -1,19 +1,39 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:instagram_clone/screens/home_screen.dart';
+import 'package:instagram_clone/services/auth_service.dart';
 
 class SignUpWithUserNameScreen extends StatefulWidget{
+  final String email;
+
+  const SignUpWithUserNameScreen({Key? key, required this.email}) : super(key: key);
   @override
-  _SignUpWithUserNameScreenState createState() => _SignUpWithUserNameScreenState();
+  _SignUpWithUserNameScreenState createState() => _SignUpWithUserNameScreenState(email);
 }
 
 class _SignUpWithUserNameScreenState extends State<SignUpWithUserNameScreen> {
+  final String email;
+  bool signedUp = false;
+  _SignUpWithUserNameScreenState(this.email);
   TextEditingController _userNameController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
   TextEditingController _confirmPasswordController = TextEditingController();
   void _navigateToHomeScreen(){
     Navigator.push(context, MaterialPageRoute(builder:  (context) =>
         HomeScreen()));
+  }
+  _submit() async {
+    try {
+      await AuthService.signUpUser(
+          context, _userNameController.text, email, _passwordController.text);
+      _navigateToHomeScreen();
+    } on PlatformException catch (err) {
+      setState(() {
+        signedUp = true;
+      });
+      throw (err);
+    }
   }
 
   @override
@@ -71,7 +91,7 @@ class _SignUpWithUserNameScreenState extends State<SignUpWithUserNameScreen> {
               height: 50,
             ),
             MaterialButton(
-              onPressed: _navigateToHomeScreen,
+              onPressed: _submit,
               child: Container(
                 padding: EdgeInsets.only(left: 120, right: 120, top: 10, bottom: 10),
                 decoration: BoxDecoration(
