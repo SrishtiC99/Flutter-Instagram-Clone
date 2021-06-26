@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/data/email_data.dart';
 import 'package:instagram_clone/screens/email_confirmation_screen.dart';
 import 'package:instagram_clone/screens/login_screen.dart';
+import 'package:instagram_clone/services/auth_service.dart';
+import 'package:instagram_clone/services/email_collection_service.dart';
 
 class CreateNewAccountScreen extends StatefulWidget {
   @override
@@ -11,12 +14,22 @@ class CreateNewAccountScreen extends StatefulWidget {
 class _CreateNewAccountScreenState extends State<CreateNewAccountScreen> {
   TextEditingController _emailController = TextEditingController();
   void _navigateToConfirmationScreen(){
+    _submit();
     Navigator.push(context, MaterialPageRoute(builder:  (context) =>
         EmailConfirmationScreen(email: _emailController.text)));
   }
   void _navigateToLogInScreen(){
     Navigator.push(context, MaterialPageRoute(builder:  (context) =>
         LoginScreen()));
+  }
+  _submit() async{
+    if(await EmailCollectionService.checkForEmail(context, _emailController.text) == true){
+      print("Email Already Exist");
+    }
+    else{
+      print("Not working ");
+      EmailCollectionService.addEmail(context, EmailData(_emailController.text, " ", " "));
+    }
   }
   Widget _bottomWidget() {
     return Container(
@@ -68,10 +81,10 @@ class _CreateNewAccountScreenState extends State<CreateNewAccountScreen> {
               Container(
                 width: 150,
                 height: 150,
-                child: Icon(
-                  Icons.account_circle_outlined,
-                  size: 140,
-                ),
+                child: Image.asset('assets/images/instagram_profile.png'),
+              ),
+              SizedBox(
+                height: 20,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 24, right: 24,),
@@ -84,7 +97,7 @@ class _CreateNewAccountScreenState extends State<CreateNewAccountScreen> {
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 20,
               ),
               MaterialButton(
                 onPressed: _navigateToConfirmationScreen,

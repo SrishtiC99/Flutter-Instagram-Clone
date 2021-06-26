@@ -13,8 +13,8 @@ class EmailConfirmationScreen extends StatefulWidget{
 
 class _EmailConfirmationScreenState extends State<EmailConfirmationScreen> {
   final String email;
-  TextEditingController _confirmationCodeController = TextEditingController();
   _EmailConfirmationScreenState(this.email);
+  TextEditingController _confirmationCodeController = TextEditingController();
   void _navigateToSignUpWithUserNameScreen(){
     Navigator.push(context, MaterialPageRoute(builder:  (context) =>
         SignUpWithUserNameScreen()));
