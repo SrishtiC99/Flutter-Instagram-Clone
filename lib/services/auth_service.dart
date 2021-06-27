@@ -16,7 +16,7 @@ class AuthService {
 
   static Future<void> signUpUser(
     BuildContext context,
-    String name,
+    String userName,
     String email,
     String password,
   ) async {
@@ -31,9 +31,9 @@ class AuthService {
         _fireStore.collection('/users').doc(signedInUser.uid).set({
           'email': email,
           'confirmationCode': token,
-          'id': "",
+          'id': userName,
           'password': password,
-          'name': name,
+          'name': "",
           'profileImageUrl': "",
           'noOfPosts': 0,
           'noOfFollowers': 0,
@@ -43,8 +43,8 @@ class AuthService {
           'isBanned': false,
         }).then((value) => null);
       }
-      Provider.of<UserData>(context, listen: false).userId = signedInUser!.uid;
-      Navigator.pop(context);
+      //Provider.of<UserData>(context, listen: false).userId = signedInUser!.uid;
+      //Navigator.pop(context);
     } on PlatformException catch (err) {
       throw (err);
     }
