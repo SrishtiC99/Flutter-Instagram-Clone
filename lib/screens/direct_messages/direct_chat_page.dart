@@ -24,7 +24,7 @@ class _DirectChatPageState extends State<DirectChatPage> {
                       Navigator.pop(context);
                     },
                     child: Icon(
-                      Icons.arrow_back_outlined,
+                      Icons.keyboard_backspace,
                       size: 30,
                     ),
                   ),
@@ -48,7 +48,7 @@ class _DirectChatPageState extends State<DirectChatPage> {
                     ),
                   ),
                   Icon(
-                    Icons.video_call_outlined,
+                    Icons.videocam_outlined,
                     size: 40,
                   ),
                 ],
