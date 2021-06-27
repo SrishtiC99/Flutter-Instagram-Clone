@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/screens/post_pages/single_post_item_page.dart';
-import 'package:instagram_clone/screens/single_story_itm_page.dart';
+import 'package:instagram_clone/screens/story_pages/single_story_item_page.dart';
+import 'package:instagram_clone/screens/story_pages/upload_story_page.dart';
 
 import 'direct_message_pages/direct_chat_page.dart';
 
@@ -16,6 +17,10 @@ class _HomePageState extends State<HomePage> {
   void _navigateToDirectChat(){
     Navigator.push(context, MaterialPageRoute(builder: (context) =>
         DirectChatPage()));
+  }
+  void _navigateToUploadStoryPage(){
+    Navigator.push(context, MaterialPageRoute(builder: (context) =>
+        UploadStoryPage()));
   }
   Widget _storyWidget() {
     return SizedBox(
@@ -88,9 +93,14 @@ class _HomePageState extends State<HomePage> {
                   padding: EdgeInsets.all(8),
                   child: Row(
                     children: [
-                      Icon(
-                        Icons.add_box_rounded,
-                        size: 30,
+                      InkWell(
+                        child: Icon(
+                          Icons.add_box_outlined,
+                          size: 30,
+                        ),
+                        onTap: (){
+                          _navigateToUploadStoryPage();
+                        },
                       ),
                       Expanded(
                         child: Text(
