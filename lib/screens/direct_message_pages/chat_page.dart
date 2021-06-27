@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/screens/direct_messages/single_chat_item.dart';
+import 'package:instagram_clone/screens/direct_message_pages/single_chat_item.dart';
+
 
 class ChatPage extends StatelessWidget{
   @override

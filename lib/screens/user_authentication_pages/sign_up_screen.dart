@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/screens/create_new_account_screen.dart';
+import 'package:instagram_clone/screens/user_authentication_pages/create_new_account_screen.dart';
 
 import 'login_screen.dart';
 

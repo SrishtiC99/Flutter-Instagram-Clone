@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/screens/create_new_account_screen.dart';
+import 'package:instagram_clone/screens/user_authentication_pages/create_new_account_screen.dart';
 import 'package:instagram_clone/screens/home_page.dart';
 import 'package:instagram_clone/screens/home_screen.dart';
-import 'package:instagram_clone/screens/sign_up_screen.dart';
+import 'package:instagram_clone/screens/user_authentication_pages/sign_up_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -13,11 +13,12 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController _userNameController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
+  void _navigateToSignUpScreen() {
 
-  void _navigateToSignUpScreen(){
     Navigator.push(context, MaterialPageRoute(builder:  (context) =>
         SignUpScreen()));
   }
+
   void _navigateToHomeScreen(){
     Navigator.push(context, MaterialPageRoute(builder:  (context) =>
         HomeScreen()));

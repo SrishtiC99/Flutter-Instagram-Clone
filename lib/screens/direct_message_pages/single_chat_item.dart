@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/screens/direct_messages/chat_room.dart';
+import 'chat_room.dart';
+
 
 class SingleChatItem extends StatefulWidget {
   @override

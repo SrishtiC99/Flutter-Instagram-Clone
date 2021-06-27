@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/screens/direct_messages/direct_chat_page.dart';
-import 'package:instagram_clone/screens/single_post_item_page.dart';
+import 'package:instagram_clone/screens/post_pages/single_post_item_page.dart';
 import 'package:instagram_clone/screens/single_story_itm_page.dart';
+
+import 'direct_message_pages/direct_chat_page.dart';
 
 
 class HomePage extends StatefulWidget {

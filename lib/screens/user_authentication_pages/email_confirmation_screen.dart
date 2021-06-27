@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:instagram_clone/screens/sign_up_with_username_screen.dart';
+import 'package:instagram_clone/screens/user_authentication_pages/sign_up_with_username_screen.dart';
 
 class EmailConfirmationScreen extends StatefulWidget{
   final String email;

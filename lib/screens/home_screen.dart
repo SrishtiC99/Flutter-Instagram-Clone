@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/screens/add_post_page.dart';
+import 'package:instagram_clone/screens/post_pages/add_post_page.dart';
 import 'package:instagram_clone/screens/home_page.dart';
 import 'package:instagram_clone/screens/my_profile_page.dart';
 import 'package:instagram_clone/screens/search_page.dart';

@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/data/email_data.dart';
-import 'package:instagram_clone/screens/email_confirmation_screen.dart';
-import 'package:instagram_clone/screens/login_screen.dart';
+import 'package:instagram_clone/screens/user_authentication_pages/email_confirmation_screen.dart';
+import 'package:instagram_clone/screens/user_authentication_pages/login_screen.dart';
 import 'package:instagram_clone/services/auth_service.dart';
 import 'package:instagram_clone/services/email_collection_service.dart';
 
